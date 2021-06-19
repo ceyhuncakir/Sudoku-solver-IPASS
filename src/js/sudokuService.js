@@ -105,7 +105,7 @@ class SudokuService {
 
   /**
    *@param grid
- * @return  {solvingProcess}   
+ * @return  {grid}   
  */
 
   solveRecursive(grid) {

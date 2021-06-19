@@ -1,6 +1,6 @@
 {
   "name": "ipass-sudoku-solver",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",

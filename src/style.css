@@ -1,0 +1,401 @@
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import url("../node_modules/@fortawesome/fontawesome-free/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html * {
+  font-family: "Roboto";
+}
+
+h1 {
+  font-size: 70px;
+}
+
+.body {
+  height: 700px;
+}
+
+
+.SudokuArea {
+  width: 100%;
+}
+
+.square {
+  text-align: center;
+  border-radius: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  font-size: 2rem;
+}
+
+.square:focus {
+  border-color: black;
+  box-shadow: none;
+  outline: none;
+}
+
+.sudoku-grid {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  grid-template: repeat(9, 1fr) / repeat(9, 1fr);
+  position: relative;
+  left: 192px;
+  top: 100px;
+}
+
+.backtracking {
+  width: 440px;
+  height: 500px;
+  position: relative;
+  right: 590px;
+  bottom: 462px;  
+  color: white;
+}
+
+.backtracking-form {
+  width: 100%;
+  height: 100%;
+  color: white;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.backtracking-form h1 {
+  position: relative;
+  top: 30px;
+  font-size: 20px;
+  color: #0F1935;
+  font-family: 'Cairo', sans-serif;
+  left: 90px;
+}
+
+.backtracking-form .description {
+  width: 360px;
+  height: 150px;
+  position: relative;
+  top: 50px;
+}
+
+.backtracking-form .description h2 {
+  font-size: 20px;
+  color: #0F1935;
+  font-family: 'Cairo', sans-serif;
+  position: relative;
+  left: 30px;
+}
+
+.backtracking-form p {
+  position: relative;
+  left: 32px;
+  font-size: 14px;
+  font-family: 'Cairo', sans-serif;
+  color: black;
+}
+
+.vergelijkbare-algoritme {
+  width: 440px;
+  height: 500px;
+  position: relative;
+  left: 590px;
+  bottom: 960px;
+  color: white;
+}
+
+.vergelijkbare-Algoritme-form {
+  width: 100%;
+  height: 100%;
+  color: white;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.vergelijkbare-Algoritme-form h1 {
+  position: relative;
+  top: 30px;
+  font-size: 20px;
+  color: #0F1935;
+  font-family: 'Cairo', sans-serif;
+  left: 105px;
+}
+
+.vergelijkbare-Algoritme-form hr {
+  position: relative;
+  top: 39px;
+  width: 320px;
+  padding: 0;
+  border: none;
+  border-top: medium double #333;
+  text-align: center;
+  background-color: #0F1935;
+}
+
+.vergelijkbare-Algoritme-form .description {
+  width: 360px;
+  height: 100px;
+  position: relative;
+  top: 50px;
+}
+
+.vergelijkbare-Algoritme-form .description h2 {
+  font-size: 20px;
+  color: #0F1935;
+  font-family: 'Cairo', sans-serif;
+  position: relative;
+  left: 30px;
+}
+
+.vergelijkbare-Algoritme-form p {
+  position: relative;
+  left: 32px;
+  font-size: 14px;
+  font-family: 'Cairo', sans-serif;
+  color: black;
+}
+
+.backtracking-form hr {
+  position: relative;
+  bottom: 10px;
+  width: 320px;
+  padding: 0;
+  border: none;
+  border-top: medium double #333;
+  background-color: #0F1935;
+  text-align: center;
+}
+
+#backtracking-chart {
+  position: relative;
+  top: 40px;
+  width: 400px;
+  height: 280px;
+  left: 6px;
+}
+
+#vergelijkbare-Algoritme-chart {
+  position: relative;
+  top: 90px;
+  width: 400px;
+  height: 280px;
+}
+
+#instructions-button {
+  position: relative;
+  top: 220px;
+  height: 40px;
+  left: 322px;
+  width: 100px;
+  height: 60px;
+}
+
+#instructions-button .fas {
+  font-size: 24px;
+}
+
+#stopbutton {
+  position: relative;
+  top: 630px;
+  height: 40px;
+  right: 395px;
+  width: 100px;
+  height: 60px;
+}
+
+#stopbutton .far {
+  font-size: 25px;
+}
+
+#generatebutton {
+  position: relative;
+  top: 630px;
+  height: 40px;
+  right: 437px;
+  width: 100px;
+  height: 60px;
+}
+
+#solvebutton {
+  position: relative;
+  top: 630px;
+  height: 40px;
+  right: 395px;
+  width: 100px;
+  height: 60px;
+}
+
+#clearbutton {
+  position: relative;
+  top: 630px;
+  height: 40px;
+  right: 356px;
+  width: 100px;
+  height: 60px;
+}
+
+#undobutton {
+  position: relative;
+  top: 630px;
+  height: 40px;
+  right: 318px;
+  width: 80px;
+  height: 60px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s ease-in-out;
+}
+
+
+.popup-inner {
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  height: 100%;
+  max-width: 670px;
+  max-height: 190px;
+  background-color: #FFF;
+  border-radius: 10px;
+  bottom: 100px;
+}
+
+.popup-inner .close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 35px;
+  height: 35px;
+  opacity: 0.3;
+}
+
+.popup-inner .close-btn:hover {
+  opacity: 1;
+}
+
+.popup-inner .close-btn:before, .popup-inner .close-btn:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 27px;
+  width: 2.5px;
+  background-color: #333;
+}
+.popup-inner .close-btn:before {
+  transform: rotate(45deg);
+}
+.popup-inner .close-btn:after {
+  transform: rotate(-45deg);
+}
+
+.footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #0F1935;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.footer p {
+  color: white;
+  position: absolute;
+  top: 30px;
+  left: 770px;
+}
+
+.footer .socials {
+  color: white;
+  font-size: 35px;
+  position: absolute;
+  left: 1700px;
+  top: 15px;
+}
+
+.footer .socials .fas {
+  margin-right: 40px;
+}
+
+.footer .socials .fas:hover {
+  color: white;
+  transition: all 0.1s ease-in;
+}
+
+.footer .socials .fas:after {
+  color: #0F1935;
+  transition: all 0.1s ease-out;
+}
+
+.footer .socials .fab {
+  margin-right: 40px;
+}
+
+.footer .socials .fab:hover {
+  color: white;
+  transition: all 0.1s ease-in;
+}
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 45px;
+  }
+  .sudoku-grid {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 430px) {
+  .sudoku-grid {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 380px) {
+  .sudoku-grid {
+    width: 300px;
+    height: 300px;
+  }
+  .square {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 330px) {
+  .sudoku-grid {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.sudoku-grid *:nth-child(9n + 3),
+*:nth-child(9n + 6) {
+  border-right: 1px solid black;
+}
+
+.sudoku-grid *:nth-child(9n + 4),
+*:nth-child(9n + 7) {
+  border-left: 1px solid black;
+}
+
+.sudoku-grid *:nth-child(n + 19):nth-child(-n + 27),
+*:nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom: 1px solid black;
+}
+
+.sudoku-grid *:nth-child(n + 28):nth-child(-n + 36),
+*:nth-child(n + 55):nth-child(-n + 63) {
+  border-top: 1px solid black;
+}

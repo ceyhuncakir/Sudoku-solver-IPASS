@@ -42,5 +42,11 @@ npm install {dependecie}
 ```
 ![](Gitimg-videos/webpageready.gif)
 
+# Testen
+Om de functionaliteiten te testen van de applicatie kan je de volgende command uitvoeren via je terminal
+```
+npm test
+```
+
 # Versie
 1.0.0 | 19-06-2021

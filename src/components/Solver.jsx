@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Button} from "react-bootstrap";
 import Board from "./Bord";
-import sudokuService, { EMPTY_GRID, EMPTY_START_GRID } from "../js/sudokuService";
+import sudokuService, { EMPTY_GRID, EMPTY_START_GRID } from "../js/sudokuAlgorithm";
 import storageService from "../js/storageService";
 import Popup from "../components/Popup";
 

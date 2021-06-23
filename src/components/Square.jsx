@@ -22,4 +22,4 @@ function Square({ id, value, disabled, style, onChange }) {
   );
 }
 
-export default Square;
+export default Square

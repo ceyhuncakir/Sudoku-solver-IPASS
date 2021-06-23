@@ -1,8 +1,8 @@
 import React from "react";
 import Square from "./Square";
 
-
 /**
+ * dit functie maakt een 9x9 grid aan voor de sudoku. Ook verrandert dit functie de cijfers binnen de sudoku. uiteindelijk word er terug gerendert in html
  * @param  {startGrid} 
  * @param {grid}
  * @param {onChange}
@@ -41,4 +41,4 @@ function Board({ startGrid, grid, onChange, disabled, popover }) {
   return <div className="sudoku-grid shadow">{renderSquares()}</div>;
 }
 
-export default Board;
+export default Board

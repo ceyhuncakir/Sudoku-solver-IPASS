@@ -2,7 +2,7 @@ import React from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 
 /**
- * In dit functie zie je hoe een chart word geconfigureert
+ * Dit functie toont de backtracking chart waar informatie word gegeven over backtracking
  * @return  {LineChart}   chart met data die aangegeven is hier beneden
  */
 function LineChart () {
@@ -28,7 +28,7 @@ function LineChart () {
 }
 
 /**
- * In dit functie zie je hoe een chart word geconfigureert
+ * Dit functie toont de vergelijkbare algoritmes en wat de vergelijkingen zijn tegen backtracking
  * @return  {Barchart}   chart met data die aangegeven is hier beneden
  */
 function Barchart () {

@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import { Backtrackingform, VergelijkbareAlgoritme } from "./components/Forms";
 
 /**
- * De app word zoals dit geinitialiseerd
+ * De functie app zorgt er voor dat alle componenten geinitialiseerd kunnen worden
  * @return  {SudokuSolver, Backtrackingform, VergelijkbareAlgoritme, Footer}   De hele app waar onder de volgende componenten vallen (sudokusolver, backtrackingform, vergelijkbarealgoritmeform, footer)
  */
 function App() {

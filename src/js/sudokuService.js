@@ -6,7 +6,10 @@ export const EMPTY_START_GRID = () =>
 class SudokuService {
   solvingProcess = [];
 
- /**hier zijn de sample sudokus die de gebruiker kan kiezen */
+ /**
+   * Dit functie returned paar sample boarden die de gebruiker kan kiezen om een sudoku board op te lossen.
+   *@return {examples}
+ */
   getRandomExample() {
     const examples = [
       [
@@ -60,9 +63,9 @@ class SudokuService {
   }
 
   /**
+   * Dit functie kijkt in het sudoku board of de volgende grid empty is. zo ja word het beschikbaar gestelt aan de algoritme
    *@param grid
  */
-
   findEmpty(grid) {
     /**er word gekeken of integer 0 kleiner is dan de grid length zo ja word het met incrementeel verhoogt*/
     for (let i = 0; i < grid.length; i++) {
@@ -75,6 +78,7 @@ class SudokuService {
   }
 
   /**
+   * Dit functie zorgt er voor dat de juiste getallen in het backtracking algoritme worden gezet. Dit doet die door naar de col & rows te kijken of de nummer er in past
    *@param grid
    *@param row
    *@param col
@@ -104,10 +108,10 @@ class SudokuService {
   }
 
   /**
+   * dit functie is het backtracking algoritme die zorgt dat het sudoku board opgelost kan worden.
    *@param grid
  * @return  {grid}   
  */
-
   solveRecursive(grid) {
     this.solvingProcess.push(grid.map((arr) => arr.slice()));
     const find = this.findEmpty(grid);
@@ -137,6 +141,7 @@ class SudokuService {
   }
 
   /**
+   * dit is het solve process van de recursive algoritme. Dit functie word opgeroepen als de sudoku opgelost moet worden.
    *@param grid
  * @return  {solvingProcess}   
  */

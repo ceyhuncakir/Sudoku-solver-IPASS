@@ -5,8 +5,8 @@ import sudokuService, { EMPTY_GRID, EMPTY_START_GRID } from "../js/sudokuService
 import storageService from "../js/storageService";
 import Popup from "../components/Popup";
 
-
 /**
+ * dit is het functie wat zorgt dat alles soepel verloopt binnen de sudoku solving applicatie
  * @return  {sudokuboard, generatebutton, stopbutton, solvebutton, clearbutton, undobutton, instructions-button, Popup}   Hier word de alle functionaliteiten van de app gereturned 
  */
 export default function SudokuSolver() {
@@ -18,15 +18,22 @@ export default function SudokuSolver() {
   const [isShowProcessChecked] = useState(true);
   const [isSolved, setIsSolved] = useState(false);
   const [isSolving, setIsSolving] = useState(false);
-  const progressSpeed = 5;
+  const progressSpeed = 10;
   const [buttonPopup, setButtonPopup] = useState(false);
 
+
+  /**
+ * Dit functie zorgt er voor dat de sudoku board geset kan worden.
+ */
   useEffect(() => {
     /**de sudoku board word hier opgehaalt via de json parsing*/
     const storageBoard = storageService.getBoard();
     if (storageBoard) setGrid(storageBoard);
   }, []);
 
+  /**
+ * Dit functie verrandert de getallen binnen de sudoku board. er word gekeken of er een getal tussen 1 tot 9 binnen een grid zit
+ */
   const handleValueChange = (e, id) => {
     const { value } = e.target;
     /** hier word er gekeken als de value van een cell kleiner of gelijkwaardig is aan 9 en value is groter dan 0 of value is gelijkwaardig aan 0*/
@@ -42,6 +49,9 @@ export default function SudokuSolver() {
     }
   };
 
+   /**
+ * Dit functie laat de progress animation zien wanneer de backtracking algoritme aan word gezet
+ */
   const showProgress = async (progress) => {
      /** de grid word uitgezet zodat er geen knoppen gebruikt kunnen worden*/
     setIsGridDisabled(true);
@@ -58,6 +68,9 @@ export default function SudokuSolver() {
     setIsSolving(false);
   };
 
+  /**
+ * Dit functie zorgt er voor dat de process van de solve button goed verloopt. Door dit functie word de backtracking algoritme aangezet
+ */
   const handleSolveButtonClicked = () => {
     /** de state van solving word op true gezet en de state setissolved word uitgezet*/
     setIsSolving(true);
@@ -76,6 +89,9 @@ export default function SudokuSolver() {
     }
   };
 
+  /**
+ * Dit functie zorgt er voor dat de sudoku board gereset kan worden. Alle nummers binnen de grids worden verwijdert.
+ */
   const reset = () => {
     /** de grit word op empty gezet wanneer de reset functie opgeroepen word*/
     setGrid(EMPTY_GRID);
@@ -88,6 +104,9 @@ export default function SudokuSolver() {
     storageService.setBoard(EMPTY_GRID());
   };
 
+  /**
+ * Dit functie zorgt er voor dat de sudoku board terug naar de huidige grid selectie gaat. De nummers blijven hetzelfde
+ */
   const undo = () => {
     /** de grid word bruikbaar gemaakt */
     setIsGridDisabled(false);

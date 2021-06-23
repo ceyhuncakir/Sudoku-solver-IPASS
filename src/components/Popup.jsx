@@ -1,7 +1,7 @@
 import React from 'react'
 
 /**
- * In dit functie zie je hoe een popup in elkaar zit
+ * Dit functie toont een popup als de gebruiker op de instructie knop klikt.
  * @param {props} 
  * @return  {popup}   chart met data die aangegeven is hier beneden
  */

@@ -11,7 +11,7 @@ h1 {
 }
 
 .body {
-  height: 700px;
+  height: 900px;
 }
 
 
@@ -34,6 +34,12 @@ h1 {
   outline: none;
 }
 
+.sixbysixsquare:focus {
+  border-color: black;
+  box-shadow: none;
+  outline: none;
+}
+
 .sudoku-grid {
   display: grid;
   width: 500px;
@@ -50,7 +56,7 @@ h1 {
   height: 500px;
   position: relative;
   right: 590px;
-  bottom: 462px;  
+  bottom: 465px;  
   color: white;
 }
 
@@ -99,7 +105,7 @@ h1 {
   height: 500px;
   position: relative;
   left: 590px;
-  bottom: 960px;
+  bottom: 960px;  
   color: white;
 }
 
@@ -399,3 +405,4 @@ h1 {
 *:nth-child(n + 55):nth-child(-n + 63) {
   border-top: 1px solid black;
 }
+
